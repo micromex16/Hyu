@@ -31,7 +31,16 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
 .env*.local
+!.env.example
+
+# Supabase CLI local state
+supabase/.temp/
+supabase/.branches/
+
+# Local-only Claude Code settings
+.claude/settings.local.json
 
 # typescript
 *.tsbuildinfo
