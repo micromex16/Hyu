@@ -1,12 +1,11 @@
 import { useCallback } from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { useAuth } from '../../../lib/auth';
 import { useDayNutrition } from '../../../lib/useDayNutrition';
 import { todayISO } from '../../../lib/date';
 import { color, font } from '../../../theme';
-import { Card, CalorieRing, MacroBars, Button, Eyebrow } from '../../../components/ui';
+import { Screen, Card, CalorieRing, MacroBars, Button, Eyebrow } from '../../../components/ui';
 
 function greeting(): string {
   const h = new Date().getHours();
@@ -29,7 +28,7 @@ export default function Home() {
   const name = user?.email?.split('@')[0] ?? 'athlete';
 
   return (
-    <SafeAreaView className="flex-1" edges={['top']}>
+    <Screen>
       <ScrollView contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 120, paddingTop: 8 }}>
         {/* Human greeting first */}
         <Text style={{ fontFamily: font.ui, fontSize: 14, color: color.graphite }}>{greeting()}</Text>
@@ -58,6 +57,6 @@ export default function Home() {
           <Button label="Start workout" variant="ink" disabled style={{ marginTop: 14 }} />
         </Card>
       </ScrollView>
-    </SafeAreaView>
+    </Screen>
   );
 }

@@ -1,13 +1,12 @@
 import { useCallback, useState } from 'react';
 import { View, Text, Pressable, ScrollView, Alert } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useDayNutrition } from '../../../lib/useDayNutrition';
 import { MEALS, mealLabel, deleteFoodLog } from '../../../lib/nutrition';
 import { addDays, humanDay, todayISO } from '../../../lib/date';
 import { color, font } from '../../../theme';
-import { Card, MacroBars, MealCard, EmptyMealRow, FoodItem, StatText, Eyebrow } from '../../../components/ui';
+import { Screen, Card, MacroBars, MealCard, EmptyMealRow, FoodItem, StatText, Eyebrow } from '../../../components/ui';
 import type { FoodLog, Meal } from '../../../lib/types';
 
 export default function FoodLogScreen() {
@@ -30,7 +29,7 @@ export default function FoodLogScreen() {
   }
 
   return (
-    <SafeAreaView className="flex-1" edges={['top']}>
+    <Screen>
       {/* Date nav */}
       <View className="flex-row items-center justify-between px-5 pt-2">
         <Pressable onPress={() => setDate(addDays(date, -1))} hitSlop={8} className="p-2 active:opacity-60">
@@ -108,6 +107,6 @@ export default function FoodLogScreen() {
           })}
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </Screen>
   );
 }

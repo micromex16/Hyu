@@ -17,6 +17,8 @@ export default function AppLayout() {
     >
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="log-food" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="edit-profile" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="edit-goals" options={{ presentation: 'modal' }} />
     </Stack>
   );
 }
