@@ -112,7 +112,7 @@ export default function EditGoals() {
           </Text>
           <Field label="Grams per lb" value={proteinPerLb} onChangeText={setProteinPerLb} placeholder="0.9" />
 
-          <Button label="Save" chamfer disabled={saving} onPress={save} style={{ marginTop: 24 }} />
+          <Button label="Save" disabled={saving} onPress={save} style={{ marginTop: 24 }} />
         </ScrollView>
       )}
     </Screen>

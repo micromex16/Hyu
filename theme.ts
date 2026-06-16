@@ -50,13 +50,27 @@ export const radius = { card: 26, panel: 22, control: 15, chip: 12, pill: 999 } 
 
 export const space = { xs: 6, sm: 10, md: 14, lg: 20, xl: 28 } as const;
 
-// Soft, warm card shadow — set both iOS and Android so cards float on both.
+// Soft, warm shadows — set both iOS and Android so surfaces float on both.
+// Premium = barely-there elevation: low opacity, wide diffuse radius, small offset.
 export const shadow = {
+  // Default card: a whisper of warm shadow, no harsh edge.
   card: {
-    shadowColor: '#15160F',
-    shadowOpacity: 0.1,
-    shadowRadius: 24,
-    shadowOffset: { width: 0, height: 16 },
-    elevation: 6,
+    shadowColor: '#1A1B12',
+    shadowOpacity: 0.05,
+    shadowRadius: 28,
+    shadowOffset: { width: 0, height: 10 },
+    elevation: 2,
+  },
+  // Slightly more lift for primary CTAs / hero surfaces.
+  raised: {
+    shadowColor: '#1A1B12',
+    shadowOpacity: 0.08,
+    shadowRadius: 32,
+    shadowOffset: { width: 0, height: 14 },
+    elevation: 4,
   },
 } as const;
+
+// Hairline used as a near-invisible edge on light-on-light cards (crispness
+// without the "boxed-in" look of a visible border).
+export const hairlineBorder = 'rgba(21,22,15,0.045)';

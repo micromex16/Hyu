@@ -45,8 +45,8 @@ export default function Home() {
           <MacroBars totals={totals} targets={targets} />
         </Card>
 
-        {/* Primary action — the one chamfer on this screen */}
-        <Button label="Log food" chamfer onPress={() => router.push('/log-food')} style={{ marginTop: 16 }} />
+        {/* Primary action */}
+        <Button label="Log food" onPress={() => router.push('/log-food')} style={{ marginTop: 16 }} />
 
         {/* Training (built in step 7) */}
         <Card style={{ marginTop: 16 }}>

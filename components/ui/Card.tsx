@@ -1,7 +1,8 @@
 import { View, type ViewProps } from 'react-native';
-import { color, radius, shadow } from '../../theme';
+import { color, radius, shadow, hairlineBorder } from '../../theme';
 
-// Porcelain raised surface with hairline border and soft warm shadow.
+// Porcelain raised surface. Borderless feel: a near-invisible hairline for edge
+// crispness on light-on-light, plus a whisper-soft warm shadow so it floats.
 export function Card({ style, children, ...props }: ViewProps) {
   return (
     <View
@@ -11,8 +12,8 @@ export function Card({ style, children, ...props }: ViewProps) {
           backgroundColor: color.porcelain,
           borderRadius: radius.card,
           borderWidth: 1,
-          borderColor: color.hair,
-          padding: 20,
+          borderColor: hairlineBorder,
+          padding: 22,
           ...shadow.card,
         },
         style,

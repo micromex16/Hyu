@@ -36,13 +36,13 @@ export function MealCard({
   );
 }
 
-// Dashed "invitation" row for an empty meal.
+// Soft "invitation" row for an empty meal (clean filled tile, no dashed border).
 export function EmptyMealRow({ label, onPress }: { label: string; onPress?: () => void }) {
   return (
     <Pressable
       onPress={onPress}
       className="mt-2 flex-row items-center justify-center py-3 active:opacity-60"
-      style={{ borderWidth: 1, borderStyle: 'dashed', borderColor: color.sage, borderRadius: 12 }}
+      style={{ backgroundColor: color.porcelain2, borderRadius: 12 }}
     >
       <Text style={{ fontFamily: font.uiMed, fontSize: 13, color: color.sageDeep }}>+ {label}</Text>
     </Pressable>

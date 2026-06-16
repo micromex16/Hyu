@@ -297,7 +297,6 @@ function PortionPanel({
 
       <Button
         label="Log it"
-        chamfer
         disabled={busy}
         onPress={async () => {
           setBusy(true);
@@ -383,7 +382,7 @@ function CustomMode({
 
       {error && <Text style={{ fontFamily: font.ui, fontSize: 13, color: color.bronze, marginTop: 8 }}>{error}</Text>}
 
-      <Button label="Save & log" chamfer disabled={saving} onPress={save} style={{ marginTop: 20, marginBottom: 40 }} />
+      <Button label="Save & log" disabled={saving} onPress={save} style={{ marginTop: 20, marginBottom: 40 }} />
     </ScrollView>
   );
 }
@@ -443,7 +442,7 @@ function QuickMode({
         <Field label="Fat (g)" value={fat} onChangeText={setFat} keyboardType="decimal-pad" containerClassName="flex-1" mono />
       </View>
 
-      <Button label="Add" chamfer disabled={saving} onPress={add} style={{ marginTop: 20, marginBottom: 40 }} />
+      <Button label="Add" disabled={saving} onPress={add} style={{ marginTop: 20, marginBottom: 40 }} />
     </ScrollView>
   );
 }

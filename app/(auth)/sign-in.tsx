@@ -102,7 +102,6 @@ export default function SignIn() {
           label={mode === 'sign-in' ? 'Sign in' : 'Create account'}
           onPress={submit}
           disabled={busy}
-          chamfer
           style={{ marginTop: 22 }}
         />
 

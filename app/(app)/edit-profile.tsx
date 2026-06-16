@@ -119,7 +119,7 @@ export default function EditProfile() {
 
           {error && <Text style={{ fontFamily: font.ui, fontSize: 13, color: color.bronze, marginTop: 14 }}>{error}</Text>}
 
-          <Button label="Save" chamfer disabled={saving} onPress={save} style={{ marginTop: 24 }} />
+          <Button label="Save" disabled={saving} onPress={save} style={{ marginTop: 24 }} />
         </ScrollView>
       )}
     </Screen>

@@ -6,10 +6,10 @@ import { StatText } from './StatText';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
-const SIZE = 158;
-const R = 65;
-const STROKE = 11;
-const CIRC = 2 * Math.PI * R; // ≈ 408
+const SIZE = 176;
+const R = 78;
+const STROKE = 9; // finer, more elegant than a chunky ring
+const CIRC = 2 * Math.PI * R;
 
 export function CalorieRing({ consumed, target }: { consumed: number; target: number }) {
   const safeTarget = target > 0 ? target : 1;
@@ -41,10 +41,7 @@ export function CalorieRing({ consumed, target }: { consumed: number; target: nu
     }).start();
   }, [pct, reduceMotion, anim]);
 
-  const dashoffset = anim.interpolate({
-    inputRange: [0, 1],
-    outputRange: [CIRC, 0],
-  });
+  const dashoffset = anim.interpolate({ inputRange: [0, 1], outputRange: [CIRC, 0] });
 
   return (
     <View style={{ width: SIZE, height: SIZE }} className="items-center justify-center">
@@ -66,22 +63,23 @@ export function CalorieRing({ consumed, target }: { consumed: number; target: nu
           strokeLinecap="round"
           strokeDasharray={CIRC}
           strokeDashoffset={dashoffset}
-          rotation={-90}
-          origin={`${SIZE / 2}, ${SIZE / 2}`}
+          transform={`rotate(-90 ${SIZE / 2} ${SIZE / 2})`}
         />
       </Svg>
-      <StatText style={{ fontSize: 33, color: color.ink }}>{consumed.toLocaleString()}</StatText>
+      <StatText style={{ fontSize: 40, color: color.ink, letterSpacing: -0.5 }}>
+        {consumed.toLocaleString()}
+      </StatText>
       <Text
         style={{
           fontFamily: font.mono,
-          fontSize: 10.5,
-          letterSpacing: 1.5,
+          fontSize: 10,
+          letterSpacing: 1.8,
           textTransform: 'uppercase',
           color: color.graphite,
-          marginTop: 2,
+          marginTop: 3,
         }}
       >
-        of {target.toLocaleString()}
+        of {target.toLocaleString()} kcal
       </Text>
     </View>
   );
